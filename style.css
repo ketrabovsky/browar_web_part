@@ -1,0 +1,92 @@
+#process {
+margin-bottom: 25px;
+}
+#process h1 {
+font-size: 26px;
+font-weight: bold;
+}
+#process .buttons {
+max-width: 50%;
+}
+#process .stages {
+max-width: 90%;
+}
+#process .stages,
+#process .buttons {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 25px;
+}
+#process .stages .stage,
+#process .stages .button,
+#process .buttons .stage,
+#process .buttons .button {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-bottom: 20px;
+}
+#process .stages .stage button,
+#process .stages .button button,
+#process .buttons .stage button,
+#process .buttons .button button {
+margin-top: 10px;
+position: relative;
+border: 1px solid black;
+outline: none;
+}
+#process .stages .stage button::after,
+#process .stages .button button::after,
+#process .buttons .stage button::after,
+#process .buttons .button button::after {
+content: "";
+position: absolute;
+}
+#process .stages .stage button,
+#process .buttons .stage button {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+background: none;
+}
+#process .stages .stage button::after,
+#process .buttons .stage button::after {
+width: 50%;
+height: 50%;
+border-radius: 50%;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background: red;
+}
+#process .stages .stage button.active::after,
+#process .buttons .stage button.active::after {
+background: green;
+}
+#process .stages .button button,
+#process .buttons .button button {
+width: 80px;
+height: 30px;
+border-radius: 15px;
+background: red;
+}
+#process .stages .button button::after,
+#process .buttons .button button::after {
+top: -1px;
+left: -1px;
+width: 40px;
+height: 30px;
+border-radius: 15px;
+background: gray;
+transition: 0.3s transform;
+}
+#process .stages .button button.active,
+#process .buttons .button button.active {
+background: green;
+}
+#process .stages .button button.active::after,
+#process .buttons .button button.active::after {
+transform: translateX(100%);
+}
