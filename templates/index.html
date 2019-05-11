@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   </head>
 
   <body>
@@ -79,7 +79,7 @@
     crossorigin="anonymous">
   </script>
 
-  <script type="text/javascript" src="scripts.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='scripts.js') }}"></script>
 
   </body>
 </html>
