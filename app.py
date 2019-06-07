@@ -14,6 +14,7 @@ class Heater:
 
 
 heater = Heater()
+pompka = Heater()
 
 HOST_PORT = 5050
 global_socket = None
@@ -24,6 +25,9 @@ cfg = load_config_file("config.json")
 heater.active = False
 get_heater_name(heater, cfg)
 print("Heater: {}".format(heater))
+
+pompka.name = "pompa_1"
+
 
 COMMAND_SET = "SET"
 COMMAND_GET = "GET"
@@ -39,17 +43,31 @@ def index():
 @app.route('/_get_data/', methods=['POST'])
 def _get_data():
     myList = ['Element1', 'Element2', 'Element3']
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect(('0.0.0.0', HOST_PORT))
+    #s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    #s.connect(('0.0.0.0', HOST_PORT))
     if heater.active:
         heater.active = False
         data = create_command(COMMAND_SET, heater.name, "OFF")
-        send_data(s, data)
+        send_data(data)
     else:
         heater.active = True
         data = create_command(COMMAND_SET, heater.name, "ON")
-        send_data(s, data)
-    s.close()
+        send_data(data)
+    return jsonify({'data': render_template('response.html', myList=myList)})
+
+@app.route('/_get_data1/', methods=['POST'])
+def _get_data1():
+    myList = ['Element1', 'Element2', 'Element3']
+    #s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    #s.connect(('0.0.0.0', HOST_PORT))
+    if pompka.active:
+        pompka.active = False
+        data = create_command(COMMAND_SET, pompka.name, "OFF")
+        send_data(data)
+    else:
+        pompka.active = True
+        data = create_command(COMMAND_SET, pompka.name, "ON")
+        send_data(data)
     return jsonify({'data': render_template('response.html', myList=myList)})
 
 

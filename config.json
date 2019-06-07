@@ -14,7 +14,7 @@
 			"type": "relay"
 		}, 
 		{
-			"name": "relay_2", 
+			"name": "pompa_1", 
 			"pin": 16,
 			"type": "relay"
 		}, 

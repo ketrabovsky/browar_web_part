@@ -30,10 +30,16 @@ def create_command(command, periph=None, state=None):
 
     return data
 
-def send_data(s, data):
+def send_data(data):
     print("DEBUG: I am in sending data functiion")
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    port = 5050
+    s.connect(('127.0.0.1', port))
     to_send = "{}\n".format(data)
     s.sendall(to_send.encode())
+    d = s.recv(1024)
+    print("RECEIVED DATA: \"{}\"".format(d))
+    s.shutdown(2)
     #received = socket.recv(1024)
     #print(received)
 
