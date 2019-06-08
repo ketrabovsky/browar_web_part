@@ -3,83 +3,63 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap&subset=latin-ext" rel="stylesheet">
   </head>
 
   <body>
-    <div id="process">
-      <h1>Proces</h1>
+    <section id="beer">
+      <div id="container">
+        <h1>Browarek</h1>
         
-      <div class="stages">
+        <div id="chart">
+          <div id="temperature">
+            <h2>0°C</h2> 
+          </div>
       
-        <div class="stage">
-          <h3>Zacieranie</h3>
-          <button disabled></button>
+          <div id="process">
+      
+            <div id="stages">
+              <div class="stage">
+                <h4>Zacieranie</h4>
+              </div>
+              <div class="stage">
+                <h4>Wygrzew</h4>
+              </div>
+              <div class="stage">
+                <h4>Wysładzanie</h4>
+              </div>
+              <div class="stage">
+                <h4>Warzenie</h4>
+              </div>
+              <div class="stage">
+                <h4>Chłodzenie</h4>
+              </div>
+              <div class="stage">
+                <h4>Gotowe do fermentacji</h4>
+              </div>
+            </div>
+            
+            <div id="timeline"></div>
+          </div>
+      
+          <div id="buttons"></div>
+            
         </div>
       
-        <div class="stage">
-          <h3>Wygrzew</h3>
-          <button disabled></button>
-        </div>
-      
-        <div class="stage">
-          <h3>Wysładzanie</h3>
-          <button disabled></button>
-        </div>
-      
-        <div class="stage">
-          <h3>Warzenie</h3>
-          <button disabled></button>
-        </div>
-      
-        <div class="stage">
-          <h3>Chłodzenie</h3>
-          <button disabled></button>
-        </div>
-      
-        <div class="stage">
-          <h3>Gotowe do fermentacji</h3>
-          <button disabled></button>
+        <div class="btn-wrapper start-wrapper">
+          <button id="start">Rozpocznij proces</button>
+          <div class="icon"></div>
         </div>
       
       </div>
-    </div>
-          
-    <div id="process">
-      <h1>Guziczki</h1>
-      
-      <div class="buttons">
-      
-        <div class="button">
-          <h3>Proces</h3>
-          <button></button>
-        </div>
-      
-        <div class="button">
-          <h3>Grzałka</h3>
-          <button id="heater"></button>
-        </div>
-      
-        <div class="button">
-          <h3>Pompa</h3>
-          <button></button>
-        </div>
-      
-        <div class="button">
-          <h3>Chłodzenie</h3>
-          <button></button>
-        </div>
-      
-      </div>
+    </section>
         
-    </div>
-        
-  <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous">
-  </script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous">
+    </script>
 
-<script type="text/javascript" src="{{ url_for('static', filename='scripts.js') }}"></script>
-
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts.js') }}"></script>
   </body>
 </html>
